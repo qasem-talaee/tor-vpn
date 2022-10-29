@@ -89,10 +89,12 @@ We done with the server.
 
 ## [Client Config ](#client-config)
 In your client system install these packages too.
+
 ```sh
 apt install tor obfs4proxy
 ```
 open `/etc/tor/torrc` file and enter it.
+
 ```sh
 UseBridges 1
 ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
@@ -102,7 +104,20 @@ Bridge obfs4 <server ip>:<server obfs4 port> <fingerprint> cert=<cert>
 HTTPTunnelPort 4211
 SocksPort 9123
 ```
+For example:
+
+```sh
+UseBridges 1
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+
+obfs4 157.211.202.160:7233 07784768F54CF66F9D588E19E8EE3B0FA702711B cert=m3jPGnUyZMWHT9Riioob95s1czvGs3HiZ64GIT3QbH/AZDVlF/YEXu/OtyYZ1eObKnTjcg iat-mode=0
+
+HTTPTunnelPort 4211
+SocksPort 9123
+```
+
 Save the file and restart your tor service.
+
 ```sh
 systemctl restart tor@default.service
 ```
