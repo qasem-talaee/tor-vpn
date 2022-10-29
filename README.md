@@ -1,4 +1,5 @@
 # How to create your private tor bridge
+If you think you want to set up your own tor server and the public service doesn't meet your needs, this tutorial can help.
 
 ## Table of contents
 
