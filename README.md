@@ -12,7 +12,7 @@
 You can get VPS with cryptocurrency from one of these [companies.](https://bitcoin-vps.com/)You must rent a VPS with 1 core CPU and 512 Mbyte of RAM minimum and install a linux distro on it.
 
 ## [Server Config](#server-config)
-Login to your VPS with root access.Then update your repositories.
+Login to your VPS with root access.Then update your repositories and packages.
 ```sh
 apt update
 apt upgrade
@@ -84,6 +84,7 @@ Now, you must get your bridge information.You can see the fingerprint in the com
 K3KLGK44LKKJKLN54LLKD649FE491FF9BA6EA5F9
 ```
 Then open `/var/lib/tor/pt_state/obfs4_bridgeline.txt`.In this file you can see your bridge that you must replace your vps information in the variables in your client.Don't change anything in this file on your server.
+Write this information down.
 
 We done with the server.
 
@@ -154,4 +155,4 @@ SocksPort 9123
 
 Great, you connected successfully.Welcome to freedom.
 
-For #Iran, For #women_life_freedom
+For #Iran, For #woman_life_freedom
