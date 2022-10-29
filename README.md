@@ -111,7 +111,7 @@ If you connected successfully, you can see `Bootstrapped 100% (done): Done` in `
 ## [Use Tor System-Wide](#system-wide)
 You can skip the whole your client system traffic from tor. In other words, you can use tor as a VPN.For this you must set `HTTPTunnelPort` and `SocksPort` in your system settings like this in gnome.You can find these ports in client config.
 
-![alt text](1.png)
+![alt text](img/1.png)
 
 ## [SSHTunneling](#sshtunneling)
 If you live in a country where you were unable to connect in the previous step due to censorship, there is a solution for you.You can use ssh local port forwarding over the tor.
@@ -139,4 +139,4 @@ SocksPort 9123
 
 Great, you connected successfully.Welcome to freedom.
 
-#women_life_freedom
+For #Iran, For #women_life_freedom
