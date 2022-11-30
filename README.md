@@ -3,11 +3,13 @@ If you think you want to set up your own tor server and the public service doesn
 
 ## Table of contents
 
-   1. [Get VPS](#get-vps)
-   2. [Server Config](#server-config)
-   3. [Client Config](#client-config)
-   4. [Use Tor System-Wide](#system-wide)
-   5. [SSHTunneling](#sshtunneling)
+- [How to create your private tor bridge](#how-to-create-your-private-tor-bridge)
+  - [Table of contents](#table-of-contents)
+  - [Get VPS](#get-vps)
+  - [Server Config](#server-config)
+  - [Client Config ](#client-config-)
+  - [Use Tor System-Wide](#use-tor-system-wide)
+  - [SSHTunneling](#sshtunneling)
 
 ## [Get VPS](#get-vps)
 You can get VPS with cryptocurrency from one of these [companies.](https://bitcoin-vps.com/)You must rent a VPS with 1 core CPU and 512 Mbyte of RAM minimum and install a linux distro on it.
@@ -129,6 +131,32 @@ If you connected successfully, you can see `Bootstrapped 100% (done): Done` in `
 You can skip the whole your client system traffic from tor. In other words, you can use tor as a VPN.For this you must set `HTTPTunnelPort` and `SocksPort` in your system settings like this in gnome.You can find these ports in client config.
 
 ![alt text](img/1.png)
+
+You can use `proxychains4` too.First install it.
+
+```sh
+apt install proxychains4
+```
+
+Then config it.
+
+```sh
+sed -i -E 's|^socks[0–9]?.*|socks5 127.0.0.1 <SocksPort>|' /etc/proxychains4.conf
+```
+
+Replace `<SocksPort>` with your client SocksPort in `etc/tor/torrc` file, in my example, SocksPort is `9123`.
+
+Finally you can use it easily.
+
+```sh
+proxychains4 apt update
+```
+
+or
+
+```sh
+proxychains4 firefox
+```
 
 ## [SSHTunneling](#sshtunneling)
 If you live in a country where you were unable to connect in the previous step due to censorship, there is a solution for you.You can use ssh local port forwarding over the tor.
